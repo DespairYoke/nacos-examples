@@ -70,7 +70,7 @@ class EchoServiceFallback implements EchoService {
 
     @Override
     public String notFound() {
-        System.out.println("notFound=================");
+        System.out.println("notFound================");
         return "notFound fallback";
     }
 }
