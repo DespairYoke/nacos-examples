@@ -3,15 +3,25 @@
 		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+
+
+	<parent>
+		<groupId>org.springframework.cloud</groupId>
+		<artifactId>spring-cloud-build</artifactId>
+		<version>2.0.4.RELEASE</version>
+	</parent>
 	<name>nacos-example</name>
 	<groupId>com.example.nacos</groupId>
 	<artifactId>nacos-examples</artifactId>
 	<packaging>pom</packaging>
-	<version>0.2.0-SNAPSHOT</version>
+	<version>v1.0.0</version>
+
 
 	<properties>
 		<spring-boot.version>2.0.4.RELEASE</spring-boot.version>
 		<spring-cloud.version>Finchley.RELEASE</spring-cloud.version>
+		<spriing-alibaba.version>0.2.1.RELEASE</spriing-alibaba.version>
+		<maven-deploy-plugin.version>2.8.2</maven-deploy-plugin.version>
 	</properties>
 
 
@@ -21,12 +31,20 @@
 		<!--<module>nacos-spring-boot-example</module>-->
 		<module>nacos-provider-example</module>
 		<module>nacos-consumer-example</module>
+		<module>nacos-config-server-exampe</module>
 		<!--<module>nacos-spring-cloud-example</module>-->
 		<!--<module>nacos-sentinel-example</module>-->
 	</modules>
 
 	<dependencyManagement>
 		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-alibaba-dependencies</artifactId>
+				<version>${spriing-alibaba.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-dependencies</artifactId>
